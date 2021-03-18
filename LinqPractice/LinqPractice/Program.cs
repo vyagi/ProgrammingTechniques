@@ -75,6 +75,12 @@ namespace LinqPractice
                     TotalSalary = employee.BaseSalary + employee.Bonus
                 };
 
+            var byRoles1 =
+                from employee in employees
+                group employee by employee.Role
+                into grouped
+                select grouped;
+
 
         }
 
