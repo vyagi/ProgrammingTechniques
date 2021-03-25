@@ -4,25 +4,13 @@ namespace SingletonDesignPattern
 {
     public class Singleton
     {
-        private static Singleton _instance;
-
-        private static object padLock = new object();
-
-        public DateTime CreatedAt { get; private set;  }
+        public DateTime CreatedAt { get; }
 
         private Singleton() => CreatedAt = DateTime.Now;
 
-        public static Singleton GetInstance()
-        {
-            if (_instance != null)
-                return _instance;
+        private static readonly Lazy<Singleton> Lazy =
+            new(() => new Singleton());
 
-            lock (padLock)
-            {
-                if (_instance == null)
-                    _instance = new Singleton();
-            }
-            return _instance;
-        }
+        public static Singleton GetInstance() => Lazy.Value;
     }
 }
