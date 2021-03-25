@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using FluentAssertions;
 using SingletonDesignPattern;
 using Xunit;
@@ -13,7 +14,7 @@ namespace SingletonTests
             var s = Singleton.GetInstance();
 
             s.Should().NotBeNull();
-            s.CreatedAt.Should().BeCloseTo(DateTime.Now);
+            s.CreatedAt.Should().BeCloseTo(DateTime.Now, 1000);
         }
 
         [Fact]
@@ -21,6 +22,19 @@ namespace SingletonTests
         {
             var s1 = Singleton.GetInstance();
             var s2 = Singleton.GetInstance();
+
+            ReferenceEquals(s1, s2).Should().BeTrue();
+        }
+
+        [Fact]
+        public void There_is_only_one_instance_in_multithreaded_env()
+        {
+            Singleton s1 = null, s2 = null;
+
+            Task task1 = Task.Factory.StartNew(() => s1 = Singleton.GetInstance());
+            Task task2 = Task.Factory.StartNew(() => s2 = Singleton.GetInstance());
+
+            Task.WaitAll(task1, task2);
 
             ReferenceEquals(s1, s2).Should().BeTrue();
         }
