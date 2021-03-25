@@ -4,7 +4,7 @@ namespace Automotive
 {
     public class Car
     {
-        private static int CarsCreated;
+        private static int _carsCreated;
 
         private double _fuelLevel;
         private double _kilometersCounter;
@@ -18,7 +18,7 @@ namespace Automotive
 
         public Car(string brand, int tankCapacity, int fuelConsumptionPer100Km)
         {
-            CarsCreated++;
+            _carsCreated++;
 
             Brand = brand;
             TankCapacity = tankCapacity;
@@ -54,9 +54,6 @@ namespace Automotive
 
         public void ResetTripCounter() => _tripKilometersCounter = 0;
 
-        public static int HowManyCarWasCreated()
-        {
-            return CarsCreated;
-        }
+        public static int CarsCreated => _carsCreated;
     }
 }
