@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Automotive
+﻿namespace Automotive
 {
     public class Car
     {
@@ -9,6 +7,7 @@ namespace Automotive
         private double _fuelLevel;
         private double _kilometersCounter;
         private double _tripKilometersCounter;
+
         public string Brand { get; }
         public int TankCapacity { get; }
         public int FuelConsumptionPer100Km { get; }

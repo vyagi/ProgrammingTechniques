@@ -1,5 +1,4 @@
-﻿using System;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
 
 namespace Automotive.Tests
@@ -9,8 +8,6 @@ namespace Automotive.Tests
         [Fact]
         public void Can_create_a_valid_car_and_its_properties_are_correct()
         {
-            //Arrange
-            //Act
             var car = new Car("Opel", 60, 6);
 
             car.Brand.Should().Be("Opel");
@@ -20,7 +17,25 @@ namespace Automotive.Tests
             car.KilometerCounter.Should().Be(0);
             car.TripKilometerCounter.Should().Be(0);
 
-            Car.CarsCreated.Should().Be(1);
+            Car.CarsCreated.Should().BeGreaterThan(0);
+        }
+
+        [Fact]
+        public void After_tanking_the_fuel_level_is_correct()
+        {
+            var car = new Car("Opel", 60, 6);
+
+            car.Tank(50);
+
+            car.CurrentFuelLevel.Should().Be(50);
+
+            car.Tank(6);
+
+            car.CurrentFuelLevel.Should().Be(56);
+
+            car.Tank(10);
+
+            car.CurrentFuelLevel.Should().Be(60);
         }
     }
 }
