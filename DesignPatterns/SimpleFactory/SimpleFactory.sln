@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoology", "Zoology\Zoology.csproj", "{A581B3FB-E89A-4D06-B561-59CBD6287E24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoology.Tests", "Zoology.Tests\Zoology.Tests.csproj", "{A9D3FC55-B51C-42D5-80E5-1D921EEA285D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A581B3FB-E89A-4D06-B561-59CBD6287E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A581B3FB-E89A-4D06-B561-59CBD6287E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A581B3FB-E89A-4D06-B561-59CBD6287E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A581B3FB-E89A-4D06-B561-59CBD6287E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D3FC55-B51C-42D5-80E5-1D921EEA285D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D3FC55-B51C-42D5-80E5-1D921EEA285D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D3FC55-B51C-42D5-80E5-1D921EEA285D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D3FC55-B51C-42D5-80E5-1D921EEA285D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82033A56-54E7-4723-8C09-915DD90A1720}
+	EndGlobalSection
+EndGlobal
