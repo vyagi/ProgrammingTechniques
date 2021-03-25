@@ -14,6 +14,9 @@ namespace SingletonDesignPattern
 
         public static Singleton GetInstance()
         {
+            if (_instance != null)
+                return _instance;
+
             lock (padLock)
             {
                 if (_instance == null)
