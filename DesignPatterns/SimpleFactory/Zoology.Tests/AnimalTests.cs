@@ -11,11 +11,14 @@ namespace Zoology.Tests
             var cat = new AnimalFactory().Create("Cat");
             var dog = new AnimalFactory().Create("Dog");
             var fish = new AnimalFactory().Create("Fish");
+            var monkey = new AnimalFactory().Create("Monkey");
             var unknown = new AnimalFactory().Create("Not exsistent");
 
             cat.Should().BeOfType<Cat>();
             dog.Should().BeOfType<Dog>();
             fish.Should().BeOfType<Fish>();
+            monkey.Should().BeOfType<Monkey>();
+
             unknown.Should().BeNull();
         }
     }
