@@ -1,27 +1,14 @@
-﻿using System;
-
-namespace Zoology
+﻿namespace Zoology
 {
     public class AnimalFactory
     {
-        public DomesticAnimal Create(string type)
-        {
-            if (type == "Dog")
+        public DomesticAnimal Create(string type) =>
+            type switch
             {
-                return new Dog();
-            }
-
-            if (type == "Cat")
-            {
-                return new Cat();
-            }
-
-            if (type == "Fish")
-            {
-                return new Fish();
-            }
-
-            return null; //Bad idea in general
-        }
+                "Dog" => new Dog(),
+                "Fish" => new Fish(),
+                "Cat" => new Cat(),
+                _ => null
+            };
     }
 }
